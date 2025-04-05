@@ -219,24 +219,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Function to handle tab switching
-    function setupTabs() {
-        const tabButtons = popupContent.querySelectorAll('.tab-btn');
-        
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Get the tab to activate
-                const tabToActivate = this.getAttribute('data-tab');
-                
-                // Set active tab button
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Set active tab content
-                const tabContents = popupContent.querySelectorAll('.tab-content');
-                tabContents.forEach(content => content.classList.remove('active'));
-                popupContent.querySelector(`#${tabToActivate}`).classList.add('active');
-            });
+function setupTabs() {
+    const tabButtons = popupContent.querySelectorAll('.tab-btn');
+    const projectId = popupTitle.textContent.includes('Chained') ? '2' : '';
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the tab to activate
+            const tabType = this.getAttribute('data-tab');
+            const tabToActivate = tabType + projectId;
+            
+            // Set active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Set active tab content
+            const tabContents = popupContent.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            popupContent.querySelector(`#${tabToActivate}`).classList.add('active');
         });
-    }
+    });
+}
 });
 
