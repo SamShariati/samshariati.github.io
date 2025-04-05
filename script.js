@@ -138,5 +138,105 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Optional: Add typing animation to hero title
-document.addEventListener('DOMContentLoaded',
+// Project popup functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all required elements
+    const projectCards = document.querySelectorAll('.big-project-card');
+    const popupOverlay = document.getElementById('project-popup-overlay');
+    const popup = document.querySelector('.project-popup');
+    const popupTitle = document.getElementById('popup-title');
+    const popupContent = document.querySelector('.popup-content');
+    const closeBtn = document.querySelector('.close-popup');
+    
+    // Add click event to all project cards
+    projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            openProjectPopup(projectId);
+        });
+        
+        // Make the View Details button work too
+        const viewDetailsBtn = card.querySelector('.view-details-btn');
+        if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent card click from firing
+                const projectId = card.getAttribute('data-project');
+                openProjectPopup(projectId);
+            });
+        }
+    });
+    
+    // Close popup when clicking the close button
+    closeBtn.addEventListener('click', closePopup);
+    
+    // Close popup when clicking outside the popup content
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            closePopup();
+        }
+    });
+    
+    // Close popup when pressing ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closePopup();
+        }
+    });
+    
+    // Function to open project popup
+    function openProjectPopup(projectId) {
+        // Get the right template
+        const template = document.getElementById(`${projectId}-template`);
+        if (!template) return;
+        
+        // Clone the template content
+        const content = template.content.cloneNode(true);
+        
+        // Clear previous content and add the new content
+        popupContent.innerHTML = '';
+        popupContent.appendChild(content);
+        
+        // Set the title
+        const projectTitle = document.querySelector(`[data-project="${projectId}"] h3`).textContent;
+        popupTitle.textContent = projectTitle;
+        
+        // Add tab functionality
+        setupTabs();
+        
+        // Show the popup
+        popupOverlay.classList.add('active');
+        
+        // Prevent scrolling on the body while popup is open
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Function to close the popup
+    function closePopup() {
+        popupOverlay.classList.remove('active');
+        
+        // Re-enable scrolling
+        document.body.style.overflow = '';
+    }
+    
+    // Function to handle tab switching
+    function setupTabs() {
+        const tabButtons = popupContent.querySelectorAll('.tab-btn');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the tab to activate
+                const tabToActivate = this.getAttribute('data-tab');
+                
+                // Set active tab button
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Set active tab content
+                const tabContents = popupContent.querySelectorAll('.tab-content');
+                tabContents.forEach(content => content.classList.remove('active'));
+                popupContent.querySelector(`#${tabToActivate}`).classList.add('active');
+            });
+        });
+    }
+});
+

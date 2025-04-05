@@ -15,6 +15,7 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#big-projects">Big Projects</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#games">Games</a></li>
                 <li><a href="#smaller-games">Smaller Games</a></li>
@@ -69,6 +70,216 @@
             <div class="skill-item">Python</div>
         </div>
     </section>
+
+    
+
+    <!-- Big Projects Section -->
+<section id="big-projects" class="big-projects">
+    <div class="section-header">
+        <h2>BIG PROJECTS</h2>
+        <div class="underline"></div>
+    </div>
+    
+    <!-- Big Project 1 -->
+    <div class="big-project-card" data-project="project1">
+        <div class="big-project-image">
+            <img src="big-project1.jpg" alt="Champion's Dispute">
+        </div>
+        <div class="big-project-info">
+            <h3>Champion's Dispute</h3>
+            <p class="big-project-description">
+                This is a larger, more significant project with more detailed description. It deserves more space to explain the concept, development process, and technologies used. This can include information about challenges faced during development, unique features, and the impact of this project.
+            </p>
+            <p class="big-project-description">
+                The gameplay focuses on exploration and puzzle-solving in a richly detailed world. Players can interact with various elements in the environment to progress through the story.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">3D Modeling</span>
+                <span class="tag">AI Systems</span>
+            </div>
+            <div class="project-meta">
+                <span class="meta-item">Team: 5</span>
+                <span class="meta-item">8 Months</span>
+            </div>
+            <button class="btn project-btn view-details-btn">View Details</button>
+        </div>
+    </div>
+    
+    <!-- Big Project 2 -->
+    <div class="big-project-card" data-project="project2">
+        <div class="big-project-image">
+            <img src="big-project2.jpg" alt="Chained 2 Violence">
+        </div>
+        <div class="big-project-info">
+            <h3>Chained 2 Violence</h3>
+            <p class="big-project-description">
+                A 2 player co-op arena game similar to games like Vampire Survivor but with the twist of you being chained together with your friend! The game is available on Steam and uses its Remote play for multiplayer!
+            </p>
+            <p class="big-project-description">
+                This project implemented a custom procedurally generated content system that creates unique enemies based on the game's current "era".
+            </p>
+            <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Multiplayer</span>
+                <span class="tag">Procedural Generation</span>
+            </div>
+            <div class="project-meta">
+                <span class="meta-item">Team: 7</span>
+                <span class="meta-item">20 Weeks</span>
+            </div>
+            <button class="btn project-btn view-details-btn">View Details</button>
+        </div>
+    </div>
+</section>
+
+<!-- Project Popup Templates (Hidden by default) -->
+<div id="project-popup-overlay" class="popup-overlay">
+    <div class="project-popup">
+        <div class="popup-header">
+            <h2 id="popup-title">Project Title</h2>
+            <button class="close-popup">&times;</button>
+        </div>
+        <div class="popup-content">
+            <!-- This will be filled with JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Project Content Templates (Hidden, used by JavaScript) -->
+<template id="project1-template">
+    <div class="popup-section">
+        <h3>Champion's Dispute</h3>
+        <p class="subtitle">2 Player Arena Survival</p>
+        
+        <p class="popup-description">
+            This is a larger, more significant project with more detailed description. It deserves more space to explain the concept, development process, and technologies used. This can include information about challenges faced during development, unique features, and the impact of this project.
+        </p>
+        
+        <h3 class="popup-section-title">My Part</h3>
+        <p class="popup-description">
+            My primary responsibility was to implement the AI systems and terrain generation. I created complex pathfinding algorithms that allowed enemies to navigate the procedurally generated terrain while maintaining balanced difficulty across gameplay sessions.
+        </p>
+        <p class="popup-description">
+            I also created all the arenas for the game as well as the majority of the visual effects, shaders, etc.
+        </p>
+        
+        <div class="popup-tabs">
+            <button class="tab-btn active" data-tab="screenshots">SCREENSHOTS</button>
+            <button class="tab-btn" data-tab="videos">VIDEOS</button>
+        </div>
+        
+        <div class="tab-content active" id="screenshots">
+            <div class="screenshot-gallery">
+                <img src="project1-screenshot1.jpg" alt="Screenshot 1">
+                <img src="project1-screenshot2.jpg" alt="Screenshot 2">
+                <img src="project1-screenshot3.jpg" alt="Screenshot 3">
+            </div>
+        </div>
+        
+        <div class="tab-content" id="videos">
+            <div class="video-gallery">
+                <div class="video-placeholder">Video 1 placeholder</div>
+                <div class="video-placeholder">Video 2 placeholder</div>
+            </div>
+        </div>
+        
+        <h3 class="popup-section-title">PROJECT DETAILS</h3>
+        <div class="project-details-grid">
+            <div class="details-item">
+                <h4>Team Size</h4>
+                <p>5 People</p>
+            </div>
+            <div class="details-item">
+                <h4>Development Time</h4>
+                <p>8 Months</p>
+            </div>
+            <div class="details-item">
+                <h4>Engine</h4>
+                <p>Unity, C#</p>
+            </div>
+            <div class="details-item">
+                <h4>Platform</h4>
+                <p>PC, Steam</p>
+            </div>
+            <div class="details-item">
+                <h4>Role</h4>
+                <p>Game Programmer</p>
+            </div>
+        </div>
+        
+        <h3 class="popup-section-title">LINKS</h3>
+        <a href="#" class="btn steam-btn">PLAY GAME ON STEAM</a>
+    </div>
+</template>
+
+<template id="project2-template">
+    <div class="popup-section">
+        <h3>Chained 2 Violence</h3>
+        <p class="subtitle">2 Player Arena Survival</p>
+        
+        <p class="popup-description">
+            Chained 2 Violence is my so far biggest game. I made it together with a team of 7 for our final University Project. It's a 2 player co-op arena game similar to games like Vampire Survivor but with the twist of you being chained together with your friend! The game is available on Steam and uses its Remote play for multiplayer!
+        </p>
+        
+        <h3 class="popup-section-title">My Part</h3>
+        <p class="popup-description">
+            My primary responsibility was to implement the Procedurally generated content of the game. I made every enemy be generated visually unique with different constraints based on the enemy type and what the current "era" of the game it is. This resulted in around a million uniquely looking enemies. The most difficult part about this was to allow the enemies to always look different but still feel cohesive to the game and easy to understand what enemy type it belonged to.
+        </p>
+        <p class="popup-description">
+            I also created all the arenas for the game as well as the majority of the visual effects, shaders, etc.
+        </p>
+        
+        <div class="popup-tabs">
+            <button class="tab-btn active" data-tab="screenshots">SCREENSHOTS</button>
+            <button class="tab-btn" data-tab="videos">VIDEOS</button>
+        </div>
+        
+        <div class="tab-content active" id="screenshots1">
+            <div class="screenshot-gallery">
+                <img src="project2-screenshot1.jpg" alt="Screenshot 1">
+                <img src="project2-screenshot2.jpg" alt="Screenshot 2">
+                <img src="project2-screenshot3.jpg" alt="Screenshot 3">
+            </div>
+        </div>
+        
+        <div class="tab-content" id="videos1">
+            <div class="video-gallery">
+                <div class="video-placeholder">Video 1 placeholder</div>
+                <div class="video-placeholder">Video 2 placeholder</div>
+            </div>
+        </div>
+        
+        <h3 class="popup-section-title">PROJECT DETAILS</h3>
+        <div class="project-details-grid">
+            <div class="details-item">
+                <h4>Team Size</h4>
+                <p>7 People</p>
+            </div>
+            <div class="details-item">
+                <h4>Development Time</h4>
+                <p>20 Weeks</p>
+            </div>
+            <div class="details-item">
+                <h4>Engine</h4>
+                <p>Unity, C#</p>
+            </div>
+            <div class="details-item">
+                <h4>Platform</h4>
+                <p>PC, Steam Deck</p>
+            </div>
+            <div class="details-item">
+                <h4>Role</h4>
+                <p>Game Programmer</p>
+            </div>
+        </div>
+        
+        <h3 class="popup-section-title">LINKS</h3>
+        <a href="#" class="btn steam-btn">PLAY GAME ON STEAM</a>
+    </div>
+</template>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
