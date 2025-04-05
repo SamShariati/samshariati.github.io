@@ -471,10 +471,14 @@ section {
         flex-direction: column;
     }
     
-    .big-project-image {
-        max-width: 100%;
-        height: 250px;
-    }
+    .big-project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Changed from 'cover' to 'contain' */
+        image-rendering: -webkit-optimize-contrast; /* Improves image sharpness in some browsers */
+        image-rendering: crisp-edges; /* Firefox */
+        max-width: none; /* Prevents certain browsers from limiting the image size */
+      }
     
     .project-details-grid {
         grid-template-columns: 1fr;
