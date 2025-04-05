@@ -18,8 +18,8 @@ function createPixels() {
     const pixelBg = document.querySelector('.pixel-bg');
     const colors = ['#ff3366', '#39c5ff', '#39ff9c', '#ffff39', '#9c39ff'];
     
-    // Create 50 random pixels
-    for (let i = 0; i < 50; i++) {
+    // Create 25 random pixels (reduced from 50)
+    for (let i = 0; i < 25; i++) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixel');
         
@@ -139,31 +139,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Optional: Add typing animation to hero title
-document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.querySelector('.hero h1');
-    const originalText = heroTitle.textContent;
-    
-    // Clear the title
-    heroTitle.textContent = '';
-    
-    // Add typing animation
-    let i = 0;
-    const typingInterval = setInterval(() => {
-        if (i < originalText.length) {
-            heroTitle.textContent += originalText.charAt(i);
-            i++;
-        } else {
-            clearInterval(typingInterval);
-            
-            // Add blinking cursor after typing is complete
-            const cursor = document.createElement('span');
-            cursor.classList.add('cursor');
-            cursor.textContent = '|';
-            heroTitle.appendChild(cursor);
-            
-            // Blink the cursor
-            setInterval(() => {
-                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-            }, 500);
-        }
-    }, 100);
+document.addEventListener('DOMContentLoaded',

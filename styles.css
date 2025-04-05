@@ -65,9 +65,9 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
-/* Hero Section */
+/* Hero Section (Smaller Version) */
 .hero {
-    height: 85vh;
+    height: 40vh; /* Reduce the height from 85vh to 40vh */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,30 +102,30 @@ nav ul li a:hover {
 
 .hero-content {
     z-index: 1;
-    padding: 2rem;
+    padding: 1.5rem; /* Less padding */
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem; /* Smaller font size */
+    margin-bottom: 0.5rem; /* Less margin */
     color: var(--primary-color);
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .hero p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.8rem; /* Smaller font size */
+    margin-bottom: 1.5rem; /* Less margin */
     color: var(--text-color);
 }
 
 .btn {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1.5rem; /* Smaller padding */
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 0;
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* Slightly smaller font */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -361,7 +361,7 @@ footer {
     }
     
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     section {
@@ -371,11 +371,11 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .btn {
-        padding: 0.8rem 1.5rem;
+        padding: 0.6rem 1.2rem;
     }
     
     .project-grid {
