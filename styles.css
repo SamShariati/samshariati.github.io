@@ -81,7 +81,7 @@ nav ul li a:hover {
     min-height: 30vh;
     position: relative;
     overflow: hidden;
-    padding: 3rem 0 2rem; /* Removed horizontal padding to allow custom centering */
+    padding: 3rem 5% 2rem; /* Added horizontal padding */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,16 +114,16 @@ nav ul li a:hover {
 
 .hero-about-content {
     display: grid;
-    grid-template-columns: minmax(300px, auto) 1fr;
+    grid-template-columns: auto 1fr; /* Changed from minmax(300px, auto) to auto */
     grid-template-areas: 
         "image header"
         "about about";
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    max-width: 1000px; /* Reduced to create a more compact, centered layout */
+    max-width: 1000px;
     margin: 0 auto;
-    width: 90%;
+    width: 100%; /* Changed from 90% to 100% */
 }
 
 .profile-image {
@@ -131,8 +131,7 @@ nav ul li a:hover {
     width: 300px;
     border: 4px solid var(--primary-color);
     margin: 0;
-    justify-self: right; /* Align to the right of its grid area */
-    padding-right: 1rem; /* Add some space between image and text */
+    justify-self: end; /* Changed from right to end for better grid alignment */
 }
 
 .profile-image img {
@@ -147,9 +146,8 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Align to the left of its grid area */
-    text-align: left; /* Left-align text */
-    padding-left: 1rem; /* Add some space between text and image */
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hero-text h1 {
@@ -165,9 +163,9 @@ nav ul li a:hover {
 
 .about-text {
     grid-area: about;
-    margin-top: 1rem;
+    margin-top: 2rem; /* Increased from 1rem to create more separation */
     text-align: center;
-    width: 80%; /* Slightly narrower for a more centered look */
+    width: 100%; /* Changed from 80% to 100% */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
