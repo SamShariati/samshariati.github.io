@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation to project cards
     animateProjectCards();
+    
+    // Initialize project popup functionality
+    initializeProjectPopups();
 });
 
 // Function to create random pixel elements in the background
@@ -141,19 +144,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Project popup functionality
-document.addEventListener('DOMContentLoaded', function() {
+function initializeProjectPopups() {
+    console.log("Initializing project popups");
+    
     // Get all required elements
-    const projectCards = document.querySelectorAll('.big-project-card, .project-card');
+    const bigProjectCards = document.querySelectorAll('.big-project-card');
+    const smallProjectCards = document.querySelectorAll('.project-card');
     const popupOverlay = document.getElementById('project-popup-overlay');
     const popup = document.querySelector('.project-popup');
     const popupTitle = document.getElementById('popup-title');
     const popupContent = document.querySelector('.popup-content');
     const closeBtn = document.querySelector('.close-popup');
     
-    // Add click event to all project cards
-    projectCards.forEach(card => {
+    // For debugging
+    console.log("Big project cards:", bigProjectCards.length);
+    console.log("Small project cards:", smallProjectCards.length);
+    
+    // Add click event to big project cards
+    bigProjectCards.forEach(card => {
         card.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
+            console.log("Big project clicked:", projectId);
             openProjectPopup(projectId);
         });
         
@@ -163,6 +174,27 @@ document.addEventListener('DOMContentLoaded', function() {
             viewDetailsBtn.addEventListener('click', function(e) {
                 e.stopPropagation(); // Prevent card click from firing
                 const projectId = card.getAttribute('data-project');
+                console.log("Big project view details clicked:", projectId);
+                openProjectPopup(projectId);
+            });
+        }
+    });
+    
+    // Add click event to small project cards
+    smallProjectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            console.log("Small project clicked:", projectId);
+            openProjectPopup(projectId);
+        });
+        
+        // Make the View Details button work too
+        const viewDetailsBtn = card.querySelector('.view-details-btn');
+        if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent card click from firing
+                const projectId = card.getAttribute('data-project');
+                console.log("Small project view details clicked:", projectId);
                 openProjectPopup(projectId);
             });
         }
@@ -189,7 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function openProjectPopup(projectId) {
         // Get the right template
         const template = document.getElementById(`${projectId}-template`);
-        if (!template) return;
+        if (!template) {
+            console.error("Template not found for:", projectId);
+            return;
+        }
+        
+        console.log("Opening popup for:", projectId);
         
         // Clone the template content
         const content = template.content.cloneNode(true);
@@ -235,11 +272,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const projectId = popupTitle.textContent;
                 let tabIdToActivate;
                 
+                // For debugging
+                console.log("Tab clicked:", tabType, "for project:", projectId);
+                
                 // Handle different tab IDs based on project type
                 if (projectId.includes('Chained')) {
                     tabIdToActivate = tabType + '2';
-                } else if (projectId.startsWith('Project Name')) {
-                    // For smaller projects, they have IDs like screenshots-small1, videos-small1
+                } else if (projectId === "Champion's Dispute") {
+                    tabIdToActivate = tabType;
+                } else {
+                    // This is for smaller projects
+                    // Find which small project number we're dealing with
                     const smallProjectNum = popupContent.querySelector('.popup-section')
                         .innerHTML.includes('small-project1') ? '1' : 
                         popupContent.querySelector('.popup-section')
@@ -248,10 +291,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         .innerHTML.includes('small-project3') ? '3' : '4';
                     
                     tabIdToActivate = tabType + '-small' + smallProjectNum;
-                } else {
-                    // Regular big project (like Champion's Dispute)
-                    tabIdToActivate = tabType;
                 }
+                
+                console.log("Activating tab:", tabIdToActivate);
                 
                 // Set active tab button
                 tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -263,8 +305,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetTabContent = popupContent.querySelector(`#${tabIdToActivate}`);
                 if (targetTabContent) {
                     targetTabContent.classList.add('active');
+                } else {
+                    console.error("Tab content not found:", tabIdToActivate);
                 }
             });
         });
     }
-});
+}
