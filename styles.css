@@ -127,7 +127,7 @@ nav ul li a:hover {
 
 .profile-image {
     grid-area: image;
-    max-width: 250px; /* Restored to previous size */
+    max-width: 500px; /* Restored to previous size */
     border: 4px solid var(--primary-color);
     margin: 0;
 }
@@ -163,7 +163,7 @@ nav ul li a:hover {
     grid-area: about;
     margin-top: 0.5rem; /* Reduced from 1rem */
     text-align: center; /* Center the text */
-    max-width: 1200px; /* Increased by 50% from 800px */
+    max-width: 2400px; /* Increased by 50% from 800px */
     margin-left: auto;
     margin-right: auto;
 }
