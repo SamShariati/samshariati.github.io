@@ -26,7 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-
 a {
     text-decoration: none;
     color: inherit;
@@ -81,6 +80,10 @@ section {
     position: relative;
     padding-top: 5rem;
     padding-bottom: 5rem; /* Add space for the rainbow separator */
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    max-width: 100%;
 }
 
 section::after {
@@ -120,62 +123,36 @@ section:last-of-type::after {
     margin: 0 auto;
 }
 
-/* Modified Hero and About Section */
+/* Redesigned Hero and About Section to match other sections */
 .hero-about {
-    min-height: 30vh;
-    position: relative;
-    overflow: hidden;
-    padding: 3rem 5% 5rem; /* Added horizontal padding */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 10%;
+    position: relative;
 }
 
+/* Remove the special backgrounds */
 .pixel-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    z-index: -1;
-}
-
-.pixel-bg::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(var(--primary-color) 1px, transparent 1px),
-                      radial-gradient(var(--secondary-color) 1px, transparent 1px),
-                      radial-gradient(var(--accent-green) 1px, transparent 1px);
-    background-size: 50px 50px;
-    background-position: 0 0, 25px 25px, 12px 12px;
-    opacity: 0.2;
+    display: none;
 }
 
 .hero-about-content {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Changed from minmax(300px, auto) to auto */
-    grid-template-areas: 
-        "image header"
-        "about about";
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    width: 100%; /* Changed from 90% to 100% */
 }
 
 .profile-image {
-    grid-area: image;
     width: 300px;
     border: 4px solid var(--primary-color);
-    margin: 0;
-    justify-self: end; /* Changed from right to end for better grid alignment */
+    margin: 0 auto 2rem auto;
 }
 
 .profile-image img {
@@ -185,48 +162,39 @@ section:last-of-type::after {
 }
 
 .hero-text {
-    grid-area: header;
-    padding-top: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .hero-text h1 {
-    font-size: 2.75rem; /* Slightly reduced */
-    margin-bottom: 0.3rem; /* Reduced spacing */
-    color: var(--primary-color); /* Restored the red color */
+    font-size: 2.75rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
 }
 
 .role {
-    font-size: 1.1rem; /* Slightly reduced */
-    margin-bottom: 0.5rem; /* Reduced spacing */
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .about-text {
-    grid-area: about;
-    margin-top: 2rem; /* Increased from 1rem to create more separation */
     text-align: center;
-    width: 100%; /* Changed from 80% to 100% */
+    width: 100%;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .about-text p {
-    margin-bottom: 0.5rem; /* Reduced from 1rem to make text more compact */
+    margin-bottom: 0.5rem;
     font-size: 1rem;
-    line-height: 1.5; /* Slightly reduced from 1.7 */
+    line-height: 1.5;
 }
 
 /* Skills Section */
-.skills {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -244,11 +212,6 @@ section:last-of-type::after {
 }
 
 /* Big Projects Section */
-.big-projects {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .big-project-card {
     display: flex;
     margin-bottom: 4rem;
@@ -507,11 +470,6 @@ section:last-of-type::after {
 }
 
 /* Projects Styling */
-.projects {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -585,24 +543,7 @@ section:last-of-type::after {
     font-weight: 500;
 }
 
-/* Technical Projects Section */
-.technical-projects {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-/* Smaller Games Section */
-.smaller-games {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 /* Contact Section */
-.contact {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .contact-container {
     display: flex;
     justify-content: center;
@@ -654,28 +595,6 @@ footer {
 
 /* Media Queries for Responsive Layout */
 @media (max-width: 900px) {
-    .hero-about-content {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "image"
-            "header"
-            "about";
-        text-align: center;
-    }
-    
-    .profile-image {
-        max-width: 200px; /* Reduced further for smaller screens */
-        margin: 0 auto;
-    }
-    
-    .hero-text {
-        align-items: center;
-    }
-    
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    
     .big-project-card {
         flex-direction: column;
     }
@@ -683,11 +602,11 @@ footer {
     .big-project-image img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Changed from 'cover' to 'contain' */
-        image-rendering: -webkit-optimize-contrast; /* Improves image sharpness in some browsers */
-        image-rendering: crisp-edges; /* Firefox */
-        max-width: none; /* Prevents certain browsers from limiting the image size */
-      }
+        object-fit: contain;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        max-width: none;
+    }
     
     .project-details-grid {
         grid-template-columns: 1fr;
@@ -707,10 +626,6 @@ footer {
     .about-content {
         flex-direction: column;
         text-align: center;
-    }
-    
-    .about-image {
-        margin-bottom: 2rem;
     }
     
     .project-grid {
@@ -739,10 +654,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .hero-about {
-        padding: 6rem 5% 3rem;
-    }
-    
     .hero-text h1 {
         font-size: 2rem;
     }
@@ -771,15 +682,4 @@ footer {
     100% {
         transform: translateY(0);
     }
-}
-
-.pixel-bg::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(var(--accent-yellow) 1px, transparent 1px);
-    background-size: 70px 70px;
-    opacity: 0.1;
-    animation: pixelFloat 15s infinite;
 }
