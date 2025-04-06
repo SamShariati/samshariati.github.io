@@ -75,12 +75,17 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
-/* Merged Hero and About Section */
+/* Modified Hero and About Section */
 .hero-about {
-    min-height: 85vh;
+    min-height: 60vh; /* Reduced from 70vh to make it shorter */
     position: relative;
     overflow: hidden;
-    padding: 8rem 10% 5rem;
+    padding: 3rem 15% 2rem; /* Reduced top/bottom padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the section */
 }
 
 .pixel-bg {
@@ -108,19 +113,23 @@ nav ul li a:hover {
 
 .hero-about-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto auto; /* Changed to auto auto to better handle content width */
     grid-template-areas: 
         "image header"
         "about about";
     gap: 2rem;
-    align-items: start;
+    align-items: center; /* Changed from start to center */
+    justify-content: center; /* Added to center the entire grid */
+    max-width: 900px; /* Adjusted to balance image and text */
+    margin: 0 auto; /* Center horizontally */
+    width: 90%; /* Control width as percentage of parent */
 }
 
 .profile-image {
     grid-area: image;
-    max-width: 300px;
+    max-width: 250px; /* Restored to previous size */
     border: 4px solid var(--primary-color);
-    margin: 0 auto;
+    margin: 0;
 }
 
 .profile-image img {
@@ -131,32 +140,38 @@ nav ul li a:hover {
 
 .hero-text {
     grid-area: header;
-    padding-top: 2rem;
+    padding-top: 0; /* Removed padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
+    font-size: 2.75rem; /* Slightly reduced */
+    margin-bottom: 0.3rem; /* Reduced spacing */
+    color: var(--primary-color); /* Restored the red color */
 }
 
 .role {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Slightly reduced */
+    margin-bottom: 0.5rem; /* Reduced spacing */
 }
 
 .about-text {
     grid-area: about;
-    margin-top: 2rem;
+    margin-top: 0.5rem; /* Reduced from 1rem */
+    text-align: center; /* Center the text */
+    max-width: 1200px; /* Increased by 50% from 800px */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced from 1rem to make text more compact */
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.5; /* Slightly reduced from 1.7 */
 }
 
 /* Media Queries for Responsive Layout */
@@ -171,7 +186,12 @@ nav ul li a:hover {
     }
     
     .profile-image {
-        max-width: 250px;
+        max-width: 200px; /* Reduced further for smaller screens */
+        margin: 0 auto;
+    }
+    
+    .hero-text {
+        align-items: center;
     }
     
     .hero-text h1 {
