@@ -391,6 +391,7 @@ section:last-of-type::after {
 .tab-content {
     display: none;
     padding: 1rem 0;
+    min-height: 200px; /* Set minimum height for tab content */
 }
 
 .tab-content.active {
@@ -403,6 +404,7 @@ section:last-of-type::after {
     gap: 1rem;
     overflow-x: auto;
     padding-bottom: 1rem;
+    min-height: 180px; /* Set consistent height for galleries */
 }
 
 .screenshot-gallery img {
@@ -480,6 +482,13 @@ section:last-of-type::after {
     border: 2px solid var(--primary-color);
     background-color: rgba(17, 27, 48, 0.8);
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project-image {
@@ -682,4 +691,23 @@ footer {
     100% {
         transform: translateY(0);
     }
+}
+
+/* Ensure hover effect works even after animation runs */
+.project-card.fade-in:hover, .big-project-card.fade-in:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Make sure tab content IDs for smaller projects are styled correctly */
+#screenshots-small1, #screenshots-small2, #screenshots-small3, #screenshots-small4,
+#videos-small1, #videos-small2, #videos-small3, #videos-small4 {
+    display: none;
+}
+
+#screenshots-small1.active, #screenshots-small2.active, 
+#screenshots-small3.active, #screenshots-small4.active,
+#videos-small1.active, #videos-small2.active, 
+#videos-small3.active, #videos-small4.active {
+    display: block;
 }

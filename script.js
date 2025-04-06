@@ -89,7 +89,7 @@ function highlightNavOnScroll() {
 
 // Function to animate project cards on scroll
 function animateProjectCards() {
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card, .big-project-card');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Project popup functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Get all required elements
-    const projectCards = document.querySelectorAll('.big-project-card');
+    const projectCards = document.querySelectorAll('.big-project-card, .project-card');
     const popupOverlay = document.getElementById('project-popup-overlay');
     const popup = document.querySelector('.project-popup');
     const popupTitle = document.getElementById('popup-title');
@@ -223,22 +223,47 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to handle tab switching
     function setupTabs() {
         const tabButtons = popupContent.querySelectorAll('.tab-btn');
-        const projectId = popupTitle.textContent.includes('Chained') ? '2' : '';
+        const tabContents = popupContent.querySelectorAll('.tab-content');
         
         tabButtons.forEach(button => {
             button.addEventListener('click', function() {
                 // Get the tab to activate
                 const tabType = this.getAttribute('data-tab');
-                const tabToActivate = tabType + projectId;
+                
+                // Find the correct tab content to show
+                // First, determine which project type we're dealing with
+                const projectId = popupTitle.textContent;
+                let tabIdToActivate;
+                
+                // Handle different tab IDs based on project type
+                if (projectId.includes('Chained')) {
+                    tabIdToActivate = tabType + '2';
+                } else if (projectId.startsWith('Project Name')) {
+                    // For smaller projects, they have IDs like screenshots-small1, videos-small1
+                    const smallProjectNum = popupContent.querySelector('.popup-section')
+                        .innerHTML.includes('small-project1') ? '1' : 
+                        popupContent.querySelector('.popup-section')
+                        .innerHTML.includes('small-project2') ? '2' : 
+                        popupContent.querySelector('.popup-section')
+                        .innerHTML.includes('small-project3') ? '3' : '4';
+                    
+                    tabIdToActivate = tabType + '-small' + smallProjectNum;
+                } else {
+                    // Regular big project (like Champion's Dispute)
+                    tabIdToActivate = tabType;
+                }
                 
                 // Set active tab button
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
                 
                 // Set active tab content
-                const tabContents = popupContent.querySelectorAll('.tab-content');
                 tabContents.forEach(content => content.classList.remove('active'));
-                popupContent.querySelector(`#${tabToActivate}`).classList.add('active');
+                
+                const targetTabContent = popupContent.querySelector(`#${tabIdToActivate}`);
+                if (targetTabContent) {
+                    targetTabContent.classList.add('active');
+                }
             });
         });
     }
