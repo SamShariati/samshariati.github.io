@@ -29,7 +29,7 @@
 <section id="about" class="hero-about">
     <div class="hero-about-content">
         <div class="profile-image">
-            <img src="/Bilder/sam.jpg" alt="Your Photo">
+            <img src="Bilder/sam.jpg" alt="Your Photo">
         </div>
         <div class="hero-text">
             <h1>Sam Shariati</h1>
@@ -39,8 +39,8 @@
         <div class="about-text">
             <p>
                 I'm a third-year Game Development student at Malmö University, currently pursuing a Bachelor's degree in game development.
-                My primary development experience lies in <strong>C#</strong> and creating games in <strong>Unity</strong>, involving everything from game design to programming gameplay systems.
-                I also have a working knowledge of <strong>C++</strong> and <strong>Java</strong>, allowing me to adapt to a variety of development environments.
+                My primary development experience lies in object oriented programming in <strong>C#</strong> and creating games in <strong>Unity</strong>, involving everything from game design to programming gameplay systems.
+                I also have a minor knowledge of <strong>C++</strong> and <strong>Java</strong>, allowing me to adapt to a variety of development environments.
             </p>
             <p>
                 My specialization is in <strong>game AI programming</strong>, ranging from fundamental finite state machines and planners to advanced behavior trees.
@@ -62,18 +62,18 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="section-header">
-            <h2>SKILLS & EXPERTISE</h2>
+            <h2>SKILLS & EXPERIENCE</h2>
             <div class="underline"></div>
         </div>
         <div class="skills-list">
-            <div class="skill-item">HTML</div>
-            <div class="skill-item">CSS</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">React</div>
-            <div class="skill-item">Node.js</div>
-            <div class="skill-item">Git</div>
-            <div class="skill-item">SQL</div>
-            <div class="skill-item">Python</div>
+            <div class="skill-item">C#</div>
+            <div class="skill-item">C++</div>
+            <div class="skill-item">Java</div>
+            <div class="skill-item">Unity</div>
+            <div class="skill-item">Maya</div>
+            <div class="skill-item">HTML & CSS</div>
+            <div class="skill-item">Adobe Illustrator</div>
+            <div class="skill-item">Krita</div>
         </div>
     </section>
 
@@ -89,25 +89,26 @@
     <!-- Big Project 1 -->
     <div class="big-project-card" data-project="project1">
         <div class="big-project-image">
-            <img src="/Bilder/champions-dispute/bild1.jpg" alt="Champion's Dispute" width="800" height="600">
+            <img src="Bilder/champions-dispute/bild1.jpg" alt="Champion's Dispute" width="800" height="600">
         </div>
         <div class="big-project-info">
-            <h3>Champion's Dispute</h3>
+            <h3>Champion's Dispute (Board Game)</h3>
             <p class="big-project-description">
-                This is a larger, more significant project with more detailed description. It deserves more space to explain the concept, development process, and technologies used. This can include information about challenges faced during development, unique features, and the impact of this project.
+                Champion's Dispute is a free for all battle royal game between 3-6 players.
+                The objective is to emerge as the sole surviving player by defeating other players in combat.
+                There are six unique champions (classes) that you will be able to choose from, each having their own strengths and weaknesses to play around.
             </p>
             <p class="big-project-description">
-                The gameplay focuses on exploration and puzzle-solving in a richly detailed world. Players can interact with various elements in the environment to progress through the story.
+                Champion's Dispute is my largest project to date. I personally handled everything from the art and game design to the graphic design and component creation myself.
             </p>
             <div class="project-tags">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">3D Modeling</span>
-                <span class="tag">AI Systems</span>
+                <span class="tag">Adobe Illustrator</span>
+                <span class="tag">DungeonDraft</span>
+                <span class="tag">Krita</span>
             </div>
             <div class="project-meta">
-                <span class="meta-item">Team: 5</span>
-                <span class="meta-item">8 Months</span>
+                <span class="meta-item">Team Size: 1</span>
+                <span class="meta-item">3 Years</span>
             </div>
             <button class="btn project-btn view-details-btn">View Details</button>
         </div>
@@ -158,18 +159,21 @@
 <template id="project1-template">
     <div class="popup-section">
         <h3>Champion's Dispute</h3>
-        <p class="subtitle">2 Player Arena Survival</p>
+        <p class="subtitle">A Battle Royal Board Game</p>
         
         <p class="popup-description">
-            This is a larger, more significant project with more detailed description. It deserves more space to explain the concept, development process, and technologies used. This can include information about challenges faced during development, unique features, and the impact of this project.
+            This project began as a school assignment for a tabletop game I wanted to bring to life, but it evolved into something much larger once I saw its potential.
+             My goal was to create a unique concept that would still be accessible to everyone—from casual newcomers to seasoned board game enthusiasts.
+             <br><br>
+             After recognizing the game’s promise early on, I focused on refining every aspect of its design, from gameplay mechanics to art and aesthetics.
+             Developed in parallel with my studies at Malmö University, my plan is to move forward by getting the game published through a partner publisher.
         </p>
-        
-        <h3 class="popup-section-title">My Part</h3>
+
+        <h3 class="popup-section-title">Work Process</h3>
         <p class="popup-description">
-            My primary responsibility was to implement the AI systems and terrain generation. I created complex pathfinding algorithms that allowed enemies to navigate the procedurally generated terrain while maintaining balanced difficulty across gameplay sessions.
-        </p>
-        <p class="popup-description">
-            I also created all the arenas for the game as well as the majority of the visual effects, shaders, etc.
+            The board pieces were designed using Adobe Illustrator and DungeonDraft. For the artwork, I used AI-generated images that I later refined in Krita, giving the game its unique medieval theme.
+            <br><br>
+            I then printed these designs on paper, adhered them to cardboard, and carved out the pieces by hand. Meanwhile, the game components were either 3D-printed or purchased from private sellers with my unique design.
         </p>
         
         <div class="popup-tabs">
@@ -179,9 +183,12 @@
         
         <div class="tab-content active" id="screenshots">
             <div class="screenshot-gallery">
-                <img src="project1-screenshot1.jpg" alt="Screenshot 1">
-                <img src="project1-screenshot2.jpg" alt="Screenshot 2">
-                <img src="project1-screenshot3.jpg" alt="Screenshot 3">
+                <img src="Bilder/champions-dispute/bild2.jpg" alt="Screenshot 1">
+                <img src="Bilder/champions-dispute/bild3.jpg" alt="Screenshot 2">
+                <img src="Bilder/champions-dispute/bild4.jpg" alt="Screenshot 3">
+                <img src="Bilder/champions-dispute/bild5.jpg" alt="Screenshot 4">
+                <img src="Bilder/champions-dispute/bild6.jpg" alt="Screenshot 5">
+                
             </div>
         </div>
         
@@ -196,28 +203,24 @@
         <div class="project-details-grid">
             <div class="details-item">
                 <h4>Team Size</h4>
-                <p>5 People</p>
+                <p>1</p>
             </div>
             <div class="details-item">
                 <h4>Development Time</h4>
-                <p>8 Months</p>
-            </div>
-            <div class="details-item">
-                <h4>Engine</h4>
-                <p>Unity, C#</p>
+                <p>3 Years</p>
             </div>
             <div class="details-item">
                 <h4>Platform</h4>
-                <p>PC, Steam</p>
+                <p>Tabletop</p>
             </div>
             <div class="details-item">
-                <h4>Role</h4>
-                <p>Game Programmer</p>
+                <h4>Programs</h4>
+                <p>Adobe Illustrator, Dungeondraft, Krita</p>
             </div>
         </div>
         
         <h3 class="popup-section-title">LINKS</h3>
-        <a href="#" class="btn steam-btn">PLAY GAME ON STEAM</a>
+        <a href="#" class="btn steam-btn">COMING SOON</a>
     </div>
 </template>
 
