@@ -117,25 +117,27 @@
     <!-- Big Project 2 -->
     <div class="big-project-card" data-project="project2">
         <div class="big-project-image">
-            <img src="big-project2.jpg" alt="Chained 2 Violence">
+            <img src="/Bilder/Chained2Violence/header.jpg" alt="Chained 2 Violence">
         </div>
         <div class="big-project-info">
             <h3>Chained 2 Violence</h3>
             <p class="big-project-description">
-                A 2 player co-op arena game similar to games like Vampire Survivor but with the twist of you being chained together with your friend! The game is available on Steam and uses its Remote play for multiplayer!
+                Chained 2 Violence is a two-player co-op arena game with roguelike elements. In this harrowing experience,
+                 players are enslaved and chained together, forced to battle relentless waves of cloned subjects created
+                  by the sinister ChronoDynamics corporation. Will you endure long enough to break free?
             </p>
             <p class="big-project-description">
-                This project implemented a custom procedurally generated content system that creates unique enemies based on the game's current "era".
+                Chained 2 Violence originated as a group project in one of my game development courses. It is now being polished and prepared for a full release on Steam, and wishlisting is already available.
             </p>
             <div class="project-tags">
                 <span class="tag">Unity</span>
                 <span class="tag">C#</span>
-                <span class="tag">Multiplayer</span>
-                <span class="tag">Procedural Generation</span>
+                <span class="tag">Co-op Multiplayer</span>
+                <span class="tag">Rougelike action</span>
             </div>
             <div class="project-meta">
-                <span class="meta-item">Team: 7</span>
-                <span class="meta-item">20 Weeks</span>
+                <span class="meta-item">Team: 8</span>
+                <span class="meta-item">5 Months</span>
             </div>
             <button class="btn project-btn view-details-btn">View Details</button>
         </div>
@@ -226,19 +228,21 @@
 
 <template id="project2-template">
     <div class="popup-section">
-        <h3>Chained 2 Violence2</h3>
+        <h3>Chained 2 Violence</h3>
         <p class="subtitle">2 Player Arena Survival</p>
         
         <p class="popup-description">
-            Chained 2 Violence is my so far biggest game. I made it together with a team of 7 for our final University Project. It's a 2 player co-op arena game similar to games like Vampire Survivor but with the twist of you being chained together with your friend! The game is available on Steam and uses its Remote play for multiplayer!
+            Chained-2-Violence throws you and a friend into a chaotic, gladiatorial fight for survival—where teamwork isn't just important,
+             it’s chained to your success. Bound together by a single, unbreakable chain, you’ll battle relentless waves of enemies, adapt to evolving arenas,
+              and unleash devastating chain-based abilities. The key? Stay in sync, or face brutal consequences. From ancient Rome to futuristic wastelands,
+               each era transforms the battlefield with unique enemies, challenges, and over-the-top physics-driven chaos. Will you master the chain and overcome the odds,
+                or succumb to the violence?
         </p>
         
         <h3 class="popup-section-title">My Part</h3>
         <p class="popup-description">
-            My primary responsibility was to implement the Procedurally generated content of the game. I made every enemy be generated visually unique with different constraints based on the enemy type and what the current "era" of the game it is. This resulted in around a million uniquely looking enemies. The most difficult part about this was to allow the enemies to always look different but still feel cohesive to the game and easy to understand what enemy type it belonged to.
-        </p>
-        <p class="popup-description">
-            I also created all the arenas for the game as well as the majority of the visual effects, shaders, etc.
+            My role was to program all of the different types of enemy AI for the game. There are nine distinct enemy types in total, including one boss, each with unique
+             behaviors and abilities. Their complexity ranges from simple player-chasing tactics to more advanced, adaptive abilities that respond to the players’ playstyles.
         </p>
         
         <div class="popup-tabs">
@@ -248,16 +252,19 @@
         
         <div class="tab-content active" id="screenshots2">
             <div class="screenshot-gallery">
-                <img src="project2-screenshot1.jpg" alt="Screenshot 1">
-                <img src="project2-screenshot2.jpg" alt="Screenshot 2">
-                <img src="project2-screenshot3.jpg" alt="Screenshot 3">
+                <img src="/Bilder/Chained2Violence/imageOne.jpg" alt="Screenshot 1">
+                <img src="/Bilder/Chained2Violence/imageTwo.jpg" alt="Screenshot 2">
+                <img src="/Bilder/Chained2Violence/imageThree.jpg" alt="Screenshot 3">
             </div>
         </div>
         
         <div class="tab-content" id="videos2">
             <div class="video-gallery">
-                <div class="video-placeholder">Video 1 placeholder</div>
-                <div class="video-placeholder">Video 2 placeholder</div>
+                <video width="50%" controls>
+                    <source src="/Bilder/Chained2Violence/trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/Bilder/Chained2Violence/boss.gif" alt="Screenshot 3" width="45%">
             </div>
         </div>
         
@@ -265,11 +272,11 @@
         <div class="project-details-grid">
             <div class="details-item">
                 <h4>Team Size</h4>
-                <p>7 People</p>
+                <p>8 People</p>
             </div>
             <div class="details-item">
                 <h4>Development Time</h4>
-                <p>20 Weeks</p>
+                <p>5 Months</p>
             </div>
             <div class="details-item">
                 <h4>Engine</h4>
@@ -281,12 +288,12 @@
             </div>
             <div class="details-item">
                 <h4>Role</h4>
-                <p>Game Programmer</p>
+                <p>Enemy AI Programmer</p>
             </div>
         </div>
         
         <h3 class="popup-section-title">LINKS</h3>
-        <a href="#" class="btn steam-btn">PLAY GAME ON STEAM</a>
+        <a href="https://store.steampowered.com/app/3307300/Chained_2_Violence/" class="btn steam-btn">GO TO STEAMPAGE</a>
     </div>
 </template>
 
