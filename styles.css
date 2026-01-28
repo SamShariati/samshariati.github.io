@@ -404,12 +404,12 @@ section:last-of-type::after {
     gap: 1rem;
     overflow-x: auto;
     padding-bottom: 1rem;
-    min-height: 360px; /* Set consistent height for galleries */
+    min-height: 480px; /* Set consistent height for galleries */
 }
 
 .screenshot-gallery img {
-    width: 300px;
-    height: 180px;
+    width: 640px;
+    height: 480px;
     object-fit: cover;
     border: 2px solid var(--secondary-color);
 }
