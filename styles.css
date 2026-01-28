@@ -404,7 +404,7 @@ section:last-of-type::after {
     gap: 1rem;
     overflow-x: auto;
     padding-bottom: 1rem;
-    min-height: 180px; /* Set consistent height for galleries */
+    min-height: 360px; /* Set consistent height for galleries */
 }
 
 .screenshot-gallery img {
