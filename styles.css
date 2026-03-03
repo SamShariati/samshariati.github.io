@@ -711,3 +711,17 @@ footer {
 #videos-small3.active, #videos-small4.active {
     display: block;
 }
+
+.board-components-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.board-components-content img {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 2px solid var(--secondary-color);
+}

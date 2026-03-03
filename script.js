@@ -278,7 +278,7 @@ function initializeProjectPopups() {
                 // Handle different tab IDs based on project type
                 if (projectId.includes('Chained')) {
                     tabIdToActivate = tabType + '2';
-                } else if (projectId === "Champion's Dispute") {
+                } else if (projectId.includes("Champion")) {
                     tabIdToActivate = tabType;
                 } else {
                     // This is for smaller projects
